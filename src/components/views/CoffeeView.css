@@ -1,0 +1,135 @@
+:root {
+  --coffee-bg: #ece0d1;
+  --coffee-accent: #3d2b1f;
+  --coffee-tan: #dbc1ac;
+  --coffee-gold: #967259;
+  --coffee-white: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+.coffee-view-wrapper.handcrafted-coffee {
+  min-height: 100vh;
+  background-color: var(--coffee-bg);
+  color: var(--coffee-accent);
+  font-family: 'Outfit', sans-serif;
+  padding: 2rem 5% 5rem;
+  overflow-x: hidden;
+}
+
+.handcrafted-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.coffee-title {
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  margin-bottom: 4rem;
+  opacity: 0.8;
+}
+
+.coffee-staggered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 2rem 0;
+}
+
+.hand-coffee-item {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.hand-coffee-item.item-1 { flex-direction: row-reverse; }
+
+.coffee-img-wrap {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+}
+
+.coffee-img-wrap img {
+  width: 85%;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+}
+
+.hand-price-tag {
+  position: absolute;
+  top: 10%;
+  right: -20px;
+  background: var(--coffee-accent);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5rem;
+  font-weight: 900;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.coffee-label-side {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--coffee-gold);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.coffee-label-side h4 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.coffee-label-side p {
+  opacity: 0.6;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+.coffee-footer-brand {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.brand-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.brand-logo span {
+  color: var(--coffee-gold);
+}
+
+.coffee-footer-brand p {
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .coffee-title { font-size: 4rem; }
+  .hand-coffee-item, .hand-coffee-item.item-1 { flex-direction: column; text-align: center; }
+  .coffee-img-wrap { width: 250px; height: 250px; }
+  .coffee-label-side { align-items: center; }
+}

@@ -1,0 +1,180 @@
+:root {
+  --zigzag-green: #1a3c34;
+  --zigzag-dark: #0f221e;
+  --zigzag-cream: #f5f5dc;
+  --zigzag-bar: #e5e5c0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+.burger-zigzag-wrapper {
+  min-height: 100vh;
+  background-color: var(--zigzag-green);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 100%),
+    linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  color: var(--zigzag-cream);
+  font-family: 'Outfit', sans-serif;
+  padding: 4rem 0;
+  overflow-x: hidden;
+}
+
+.zigzag-header {
+  text-align: center;
+  margin-bottom: 8rem;
+  position: relative;
+}
+
+.menu-title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 900;
+  color: white;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.zigzag-header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline/Spine */
+.zigzag-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  padding-bottom: 10rem;
+}
+
+.central-spine-bar {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: var(--zigzag-bar);
+  transform: translateX(-50%);
+  border-radius: 40px;
+  z-index: 1;
+}
+
+.zigzag-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.zigzag-img-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.img-circle-wrap {
+  width: 350px;
+  height: 350px;
+  background: var(--zigzag-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.img-circle-wrap img {
+  width: 100%;
+}
+
+.zigzag-spacer {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.spine-connector {
+  width: 160px;
+  height: 80px;
+  background: var(--zigzag-green);
+  border: 80px solid var(--zigzag-green);
+  /* The connectors are simplified logic in CSS, we'll use a direct bar connection */
+  background: var(--zigzag-bar);
+  border-radius: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.zigzag-text-side {
+  flex: 1;
+  padding: 0 4rem;
+}
+
+.zigzag-row.left .zigzag-img-side { order: 1; }
+.zigzag-row.left .zigzag-spacer { order: 2; }
+.zigzag-row.left .zigzag-text-side { order: 3; text-align: left; }
+
+.zigzag-row.right .zigzag-img-side { order: 3; }
+.zigzag-row.right .zigzag-spacer { order: 2; }
+.zigzag-row.right .zigzag-text-side { order: 1; text-align: right; }
+
+.text-content h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.zigzag-price {
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--zigzag-bar);
+}
+
+.zigzag-footer {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.footer-line {
+  width: 80px;
+  height: 80px;
+  background: var(--zigzag-bar);
+  margin: 0 auto 3rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .central-spine-bar { left: 5%; transform: none; width: 40px; }
+  .zigzag-spacer { display: none; }
+  .zigzag-row, .zigzag-row.left, .zigzag-row.right {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .zigzag-text-side { padding: 0 10%; text-align: center !important; }
+  .img-circle-wrap { width: 250px; height: 250px; }
+}
