@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
 :root {
   --bento-cream: #f4f1de;
   --bento-green: #1a3c34;
@@ -7,7 +9,6 @@
   --bento-brown: #3d2b1f;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
 .home-bento-wrapper {
   min-height: 100vh;

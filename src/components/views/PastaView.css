@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
 :root {
   --foodeat-peach: #f9d8b7;
   --foodeat-orange: #d35400;
@@ -5,7 +7,6 @@
   --foodeat-white: #ffffff;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
 .pasta-grid-wrapper {
   height: 100vh;

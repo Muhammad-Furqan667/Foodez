@@ -107,7 +107,7 @@ const PizzaView: React.FC<PizzaViewProps> = ({ category, onBack }) => {
           onDrag={(_, info) => {
             rotation.set(rotation.get() + info.delta.x * 0.5);
           }}
-          onDragEnd={(_, info) => {
+          onDragEnd={(_) => {
             const current = rotation.get();
             const snapped = Math.round(current / angleStep) * angleStep;
             const clamped = Math.max((count - 1) * -angleStep, Math.min(0, snapped));
